@@ -1,3 +1,4 @@
+import os
 import requests
 import hashlib
 import time
@@ -5,10 +6,10 @@ from datetime import datetime
 from twilio.rest import Client
 
 # Configuration Twilio
-ACCOUNT_SID = "AC61c05c15f806f8a611dee4ede9111a42"
-AUTH_TOKEN = "118a6692782ed4f1a382d6293e38885b"
+ACCOUNT_SID = os.environ.get("ACCOUNT_SID")
+AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
 TWILIO_WHATSAPP = "whatsapp:+14155238886"  # Numéro sandbox Twilio
-TON_WHATSAPP = "whatsapp:+221774976257"
+TON_WHATSAPP = os.environ.get("TWILIO_TO")
 
 # URL à surveiller
 URL = "https://www.nifa.sn/trajets-disponibles"
